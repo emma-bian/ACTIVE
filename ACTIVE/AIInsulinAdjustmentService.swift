@@ -4,6 +4,7 @@
 //
 //  Created by Emma Bian on 2026-07-16.
 //
+//  AI services were created with the help of Claude Sonnet 5
 
 import Foundation
 import Combine

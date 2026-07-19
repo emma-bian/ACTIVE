@@ -111,28 +111,6 @@ class HealthKitManager: ObservableObject {
         }
     }
 
-    
-
-//    private func observeQuantityType(_ identifier: HKQuantityTypeIdentifier, onUpdate: @escaping () -> Void) {
-//        guard let healthStore else { return }
-//        guard let quantityType = HKQuantityType.quantityType(forIdentifier: identifier) else { return }
-//
-//        let query = HKObserverQuery(sampleType: quantityType, predicate: nil) { _, completionHandler, _ in
-//            onUpdate()
-//            completionHandler()
-//        }
-//
-//        healthStore.execute(query)
-//        healthStore.enableBackgroundDelivery(for: quantityType, frequency: .immediate) { _, _ in }
-//    }
-//
-//    func startObservingAllVitals() {
-//        observeQuantityType(.bloodGlucose) { [weak self] in self?.fetchGlucose() }
-//        observeQuantityType(.heartRate) { [weak self] in self?.fetchHeartRate() }
-//        observeQuantityType(.oxygenSaturation) { [weak self] in self?.fetchOxygenSaturation() }
-//    }
-
-
     var latestGlucose: VitalReading? { glucoseReadings.last }
     var latestHeartRate: VitalReading? { heartRateReadings.last }
     var latestOxygenSaturation: VitalReading? { oxygenSaturationReadings.last }
@@ -165,6 +143,7 @@ class HealthKitManager: ObservableObject {
     }
     
 
+    // testing data was generated using Claude Sonnet 5
     func seedTestData(completion: (() -> Void)? = nil) {
         guard let healthStore else {
             completion?()
